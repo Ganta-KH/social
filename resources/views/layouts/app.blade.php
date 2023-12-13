@@ -11,6 +11,7 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
@@ -53,9 +54,8 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a class="navbar-brand" href="{{ url('/') }}">
-                                    <img src="images/socialLogo.svg" alt="logo" class="logo">
-                                    <strong>Social</strong>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->username }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
