@@ -6,3 +6,33 @@
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+.welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    flex-direction: column;
+    gap: 4px;
+
+    img {
+        width: 45vw;
+    }
+}
+
+h1 {
+    color: #001B79;
+    font-size: 3.5vw;
+    border-bottom: 2px solid;
+    width: fit-content;
+}
+
+.navbar-brand {
+    gap: 5px;
+    display: flex;
+    align-items: center;
+
+    .logo {
+        height: 32px;
+    }
+}
