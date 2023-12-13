@@ -53,3 +53,35 @@ h1 {
 .post-bt:hover {
     background-color: #001B79;
 }
+
+.py-4 {
+    padding-inline: 17vw;
+}
+
+.post-bt {
+    background-color: #1640D6;
+    color: white;
+    font-weight: 600;
+    padding: 8px 50px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.create {
+    display: flex;
+    flex-direction: column;
+
+    gap: 56px;
+
+    form {
+        div {
+            margin-bottom: 20px;
+
+            label {
+                font-size: large;
+                padding-right: 10px;
+            }
+        }
+    }
+}
