@@ -36,3 +36,20 @@ h1 {
         height: 32px;
     }
 }
+
+.add-post {
+    position: fixed;
+    border-radius: 50%;
+    font-size: 35px;
+    font-weight: bold;
+    border: none;
+    background-color: #1640D6;
+    color: white;
+    bottom: 75px;
+    right: 75px;
+}
+
+.add-post:hover,
+.post-bt:hover {
+    background-color: #001B79;
+}
