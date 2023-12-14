@@ -102,35 +102,7 @@ h1 {
             object-fit: cover;
         }
 
-        .func {
-            display: flex;
-            justify-content: space-between;
-            padding-inline: 15px;
-            padding-top: 3px;
-
-            .func-1,
-            .func-2 {
-                display: flex;
-                gap: 5px;
-
-                a > svg {
-                    width: 24px;
-                }
-
-                a > svg:hover {
-                    transform: scale(1.2);
-                    transition: 100ms;
-                }
-
-                .like:hover {
-                    fill: blue;
-                }
-
-                .delete:hover {
-                    fill: red;
-                }
-            }
-        }
+        
 
     }
 
@@ -138,5 +110,63 @@ h1 {
         transform: scale(1.02);
         transition: 100ms;
     }
+}
+
+.func {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 15px;
+    padding-top: 3px;
+
+    .func-1,
+    .func-2 {
+        display: flex;
+        gap: 5px;
+
+        a > svg {
+            width: 24px;
+        }
+
+        a > svg:hover {
+            transform: scale(1.2);
+            transition: 100ms;
+        }
+
+        .like:hover {
+            fill: blue;
+        }
+
+        .delete:hover {
+            fill: red;
+        }
+    }
+}
+
+.show {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    img {
+        max-width: 60vw;
+        max-height: 75vh;
+    }
+
+    .func {
+        justify-content: center;
+        gap: 86px;
+        padding-top: 12px;
+
+        .func-1,
+        .func-2 {
+
+            a > svg {
+                width: 36px;
+            }
+        }
+    }
+
+    
+
 }
 

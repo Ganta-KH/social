@@ -25,3 +25,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/social/create', [PostController::class,'index'])->name('social.create');
 Route::post('/home', [PostController::class,'store'])->name('social.store');
+Route::get('/home/{id}', [PostController::class,'show'])->name('social.show');

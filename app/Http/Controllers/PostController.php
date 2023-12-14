@@ -37,4 +37,8 @@ class PostController extends Controller
 
         return redirect(route('home'));
     }
+
+    public function show($id) {
+        return view('social.show')->with('post', Post::find($id));
+    }
 }
