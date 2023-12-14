@@ -9,10 +9,10 @@
     <div class="home">
         @foreach ($posts as $post)
             <div class="card shadow-sm">
-                {{-- <form action="">
+                <form action="">
                     <input type="image" name="submit" src="{{ asset($post->image) }}">
-                </form> --}}
-                <img src="{{ asset($post->image) }}" alt="" class="img-post">
+                </form>
+                {{-- <img src="{{ asset($post->image) }}" alt="" class="img-post"> --}}
 
                 <div class="func">
                     <div class="func-1">

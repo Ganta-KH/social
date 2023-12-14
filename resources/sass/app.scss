@@ -98,11 +98,8 @@ h1 {
         form,
         form > input {
             height: 93%;
-        }
-
-        .img-post {
-            height: 93%;
-            border-radius: inherit;
+            width: inherit;
+            object-fit: cover;
         }
 
         .func {
