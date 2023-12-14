@@ -85,3 +85,61 @@ h1 {
         }
     }
 }
+
+.home {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 18px;
+    
+    .card {
+        height: 500px;
+        width: 375px;
+
+        form,
+        form > input {
+            height: 93%;
+        }
+
+        .img-post {
+            height: 93%;
+            border-radius: inherit;
+        }
+
+        .func {
+            display: flex;
+            justify-content: space-between;
+            padding-inline: 15px;
+            padding-top: 3px;
+
+            .func-1,
+            .func-2 {
+                display: flex;
+                gap: 5px;
+
+                a > svg {
+                    width: 24px;
+                }
+
+                a > svg:hover {
+                    transform: scale(1.2);
+                    transition: 100ms;
+                }
+
+                .like:hover {
+                    fill: blue;
+                }
+
+                .delete:hover {
+                    fill: red;
+                }
+            }
+        }
+
+    }
+
+    .card:hover {
+        transform: scale(1.02);
+        transition: 100ms;
+    }
+}
+
