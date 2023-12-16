@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         $user_id = auth()->user()->id;
-        $posts = Post::where('user_id', $user_id)->get();
+        $posts = Post::where('user_id', $user_id)->orderBy('id', 'desc')->get();
         return view('home',['posts'=> $posts]);
     }
 }
