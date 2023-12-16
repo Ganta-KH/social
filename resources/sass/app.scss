@@ -98,12 +98,10 @@ h1 {
         form,
         form > input {
             height: 93%;
+            border-radius: inherit;
             width: inherit;
             object-fit: cover;
         }
-
-        
-
     }
 
     .card:hover {
@@ -123,6 +121,15 @@ h1 {
         display: flex;
         gap: 5px;
 
+        form input {
+            width: 24px;
+        }
+
+        form input:hover {
+            transform: scale(1.2);
+            transition: 100ms;
+        }
+
         a > svg {
             width: 24px;
         }
@@ -131,42 +138,7 @@ h1 {
             transform: scale(1.2);
             transition: 100ms;
         }
-
-        .like:hover {
-            fill: blue;
-        }
-
-        .delete:hover {
-            fill: red;
-        }
     }
 }
 
-.show {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-
-    img {
-        max-width: 60vw;
-        max-height: 75vh;
-    }
-
-    .func {
-        justify-content: center;
-        gap: 86px;
-        padding-top: 12px;
-
-        .func-1,
-        .func-2 {
-
-            a > svg {
-                width: 36px;
-            }
-        }
-    }
-
-    
-
-}
 
