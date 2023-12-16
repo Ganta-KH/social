@@ -52,13 +52,16 @@ h1 {
 .add-post:hover,
 .post-bt:hover {
     background-color: #001B79;
+    transform: scale(1.05);
+    transition: 100ms;
 }
 
 .py-4 {
     padding-inline: 17vw;
 }
 
-.post-bt {
+.post-bt,
+.edit-bt {
     background-color: #1640D6;
     color: white;
     font-weight: 600;
@@ -94,6 +97,7 @@ h1 {
     .card {
         height: 500px;
         width: 375px;
+        border: none;
 
         form,
         form > input {

@@ -26,3 +26,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/social/create', [PostController::class,'index'])->name('social.create');
 Route::post('/home', [PostController::class,'store'])->name('social.store');
 Route::get('/home/{id}', [PostController::class,'show'])->name('social.show');
+Route::get('/social/{id}', [PostController::class,'edit'])->name('social.edit');
+Route::put('/social/update/{id}', [PostController::class,'update'])->name('social.update');

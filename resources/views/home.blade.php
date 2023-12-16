@@ -9,7 +9,7 @@
     <div class="home">
         @foreach ($posts as $post)
             <div class="card shadow-sm">
-                <form action="{{ route('social.show', $post->id) }}" method="get">
+                <form action="{{ route('social.show', $post) }}" method="get">
                     <input type="image" src="{{ asset($post->image) }}">
                 </form>
 
@@ -21,7 +21,7 @@
                         </form>
                     </div>
                     <div class="func-2">
-                        <form action="" method="get">
+                        <form action="{{ route('social.edit', $post->id) }}" method="get" enctype="multipart/form-data">
                             <input type="image" src="/images/icons/edit.svg">
                         </form>
                         <form action="" method="post">

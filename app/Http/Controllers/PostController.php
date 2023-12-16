@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -23,13 +24,15 @@ class PostController extends Controller
             'description'=> ['nullable','string', 'max:225'],
         ]);
 
+        $filename = time().'.'.$request->image->getClientOriginalName();
+
         $username = auth()->user()->username;
         $request->file('image')->storeAs(
          'posts/'. $username,
-         $request->image->getClientOriginalName(),
+         $filename,
          'public');
         
-        $post->image = 'storage/posts/'. $username.'/'.$request->image->getClientOriginalName();
+        $post->image = 'storage/posts/'. $username.'/'.$filename;
         $post->description = $request->description;
         $post->user_id = auth()->user()->id;
 
@@ -40,5 +43,34 @@ class PostController extends Controller
 
     public function show($id) {
         return view('social.show')->with('post', Post::find($id));
+    }
+
+    public function edit($id) {
+        return view('social.edit')->with('post', Post::find($id));
+    }
+
+    public function update(Request $request, $id) {
+        $post = Post::find($id);
+        $username = auth()->user()->username;
+        
+        if ($request->hasFile('image')) {
+            $filename = time().'.'.$request->image->getClientOriginalName();
+
+            $str = explode('/', $post->image);
+            array_shift($str);
+            Storage::delete(implode('/', $str));
+            
+            $request->file('image')->storeAs(
+                'posts/'. $username,
+                $filename,
+                'public');
+            
+            $post->image = 'storage/posts/'. $username.'/'.$filename;
+        }
+
+        $post->description = $request->description;
+        
+        $post->update();
+        return redirect(route('home'));
     }
 }
