@@ -83,6 +83,7 @@ class PostController extends Controller
 
     public function delete($id) {
         $post = Post::find($id);
+        Comment::where('post_id', $post->id)->delete();
         unlink($post->image);
         $post->delete();
         return redirect(route('home'));
