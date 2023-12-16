@@ -21,10 +21,13 @@
                     </form>
                 </div>
             </div>
+            <hr>
         </div>
+        
+        
 
         <div class="comments">
-
+            <h2><strong>Comments</strong></h2>
         </div>
         
     </div>    
