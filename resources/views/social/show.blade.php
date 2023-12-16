@@ -24,7 +24,13 @@
             <hr>
         </div>
         
-        
+        <form action="{{ route('comment.store', $post->id) }}" method="post">
+            @csrf
+            @method('post')
+            <Label for="comment">Add a Comment:</Label>
+            <textarea name="comment" id="comment" cols="100" rows="5" required></textarea>
+            <input type="submit" value="Add" class="cmnt-bt">
+        </form>
 
         <div class="comments">
             <h2><strong>Comments</strong></h2>

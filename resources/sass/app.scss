@@ -50,7 +50,8 @@ h1 {
 }
 
 .add-post:hover,
-.post-bt:hover {
+.post-bt:hover,
+.cmnt-bt:hover {
     background-color: #2B3499;
     transform: scale(1.1);
     transition: 100ms;
@@ -61,7 +62,8 @@ h1 {
 }
 
 .post-bt,
-.edit-bt {
+.edit-bt,
+.cmnt-bt {
     background-color: #1640D6;
     color: white;
     font-weight: 600;
@@ -156,12 +158,29 @@ h1 {
     }
 
     .func {
+        padding-top: 7px;
         .func-1,
         .func-2 {
             form input,
             a svg {
                 width: 32px;;
             }
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        align-self: flex-start;
+
+        label {
+            font-size: large;
+            font-weight: bold;
+        }
+
+        input {
+            align-self: flex-start;
         }
     }
 }
