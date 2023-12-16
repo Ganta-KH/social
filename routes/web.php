@@ -33,3 +33,4 @@ Route::put('/social/update/{id}', [PostController::class,'update'])->name('socia
 Route::delete('/social/delete/{id}', [PostController::class,'delete'])->name('social.delete');
 
 Route::post('/comment/{id}', [CommentController::class,'store'])->name('comment.store');
+Route::get('/comment', [CommentController::class,'show'])->name('comment.show');

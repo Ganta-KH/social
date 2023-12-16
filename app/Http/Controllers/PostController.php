@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
@@ -42,7 +44,15 @@ class PostController extends Controller
     }
 
     public function show($id) {
-        return view('social.show')->with('post', Post::find($id));
+        $user_id = auth()->user()->id;
+        $post = Post::find($id);
+        $comments = Comment::join('users','users.id','=','comments.user_id')
+                           ->select('users.username', 'comments.comment')
+                           ->where('users.id', $user_id)
+                           ->where('comments.post_id', $id)
+                           ->get();
+
+        return view('social.show', ['post'=> $post, 'comments'=> $comments]);
     }
 
     public function edit($id) {

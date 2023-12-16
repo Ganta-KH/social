@@ -18,13 +18,13 @@
     img {
         width: 45vw;
     }
-}
 
-h1 {
-    color: #001B79;
-    font-size: 3.5vw;
-    border-bottom: 2px solid;
-    width: fit-content;
+    h1 {
+        color: #001B79;
+        font-size: 3.5vw;
+        border-bottom: 2px solid;
+        width: fit-content;
+    }
 }
 
 .navbar-brand {
@@ -175,12 +175,19 @@ h1 {
         align-self: flex-start;
 
         label {
-            font-size: large;
+            font-size: 22px;
             font-weight: bold;
         }
 
         input {
             align-self: flex-start;
         }
+    }
+}
+
+.comments {
+    align-self: flex-start;
+    .cmnt p {
+        font-size: 16px;
     }
 }

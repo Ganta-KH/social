@@ -18,4 +18,15 @@ class CommentController extends Controller
         $comment->save();
         return redirect(route('social.show', $id));
     }
+
+    public function index($id) {
+        $user_id = auth()->user()->id;
+        $comments = Comment::join('comments','comments.user_id','=','users.id')
+                           ->select('users.username', 'comments.comment')
+                           ->where('users.id', $user_id)
+                           ->where('comments.post_id', $id)
+                           ->get();
+        
+        return view('social.show', ['comments'=> $comments]);
+    }
 }

@@ -32,8 +32,18 @@
             <input type="submit" value="Add" class="cmnt-bt">
         </form>
 
+        <hr>
+
+        <h1><strong>Comments</strong></h1>
+        
+
         <div class="comments">
-            <h2><strong>Comments</strong></h2>
+            @foreach ($comments as $comment)
+                <div class="cmnt">
+                    <h4><strong>{{ $comment->username }}</strong></h4>
+                    <p>{{ $comment->comment }}</p>
+                </div>
+            @endforeach
         </div>
         
     </div>    
