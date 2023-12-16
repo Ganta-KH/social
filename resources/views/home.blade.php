@@ -24,7 +24,7 @@
                         <form action="{{ route('social.edit', $post->id) }}" method="get" enctype="multipart/form-data">
                             <input type="image" src="/images/icons/edit.svg">
                         </form>
-                        <form action="" method="post">
+                        <form action="{{ route('social.delete', $post->id) }}" method="post">
                             @csrf
                             @method('delete')
                             <input type="image" src="/images/icons/delete.svg">

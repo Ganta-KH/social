@@ -28,3 +28,4 @@ Route::post('/home', [PostController::class,'store'])->name('social.store');
 Route::get('/home/{id}', [PostController::class,'show'])->name('social.show');
 Route::get('/social/{id}', [PostController::class,'edit'])->name('social.edit');
 Route::put('/social/update/{id}', [PostController::class,'update'])->name('social.update');
+Route::delete('/social/delete/{id}', [PostController::class,'delete'])->name('social.delete');

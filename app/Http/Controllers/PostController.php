@@ -70,4 +70,11 @@ class PostController extends Controller
         $post->update();
         return redirect(route('home'));
     }
+
+    public function delete($id) {
+        $post = Post::find($id);
+        unlink($post->image);
+        $post->delete();
+        return redirect(route('home'));
+    }
 }
