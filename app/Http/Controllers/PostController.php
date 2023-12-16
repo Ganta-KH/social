@@ -33,7 +33,7 @@ class PostController extends Controller
          'public');
         
         $post->image = 'storage/posts/'. $username.'/'.$filename;
-        $post->description = $request->description;
+        $post->description = is_null($request->description) ? "" : $request->description;
         $post->user_id = auth()->user()->id;
 
         $post->save();
@@ -56,10 +56,8 @@ class PostController extends Controller
         if ($request->hasFile('image')) {
             $filename = time().'.'.$request->image->getClientOriginalName();
 
-            $str = explode('/', $post->image);
-            array_shift($str);
-            Storage::delete(implode('/', $str));
-            
+            unlink($post->image);
+
             $request->file('image')->storeAs(
                 'posts/'. $username,
                 $filename,
@@ -67,8 +65,7 @@ class PostController extends Controller
             
             $post->image = 'storage/posts/'. $username.'/'.$filename;
         }
-
-        $post->description = $request->description;
+        $post->description = is_null($request->description) ? "" : $request->description;
         
         $post->update();
         return redirect(route('home'));
