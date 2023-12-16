@@ -22,6 +22,11 @@
                 </div>
             </div>
             <hr>
+            <div class="description">
+                <h3><strong>Description:</strong></h3>
+                <p>{{ $post->description }}</p>
+            </div>
+            <hr>
         </div>
         
         <form action="{{ route('comment.store', $post->id) }}" method="post">
