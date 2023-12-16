@@ -145,4 +145,23 @@ h1 {
     }
 }
 
+.show {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+    .post img {
+        max-width: 100%;
+        border-radius: 5px;
+    }
+
+    .func {
+        .func-1,
+        .func-2 {
+            form input,
+            a svg {
+                width: 32px;;
+            }
+        }
+    }
+}
