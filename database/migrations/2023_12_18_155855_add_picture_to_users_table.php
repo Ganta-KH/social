@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('picture')->default('images/icons/profile.svg');
+            $table->string('avatar')->default('images/icons/profile.svg');
         });
     }
 
@@ -22,7 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('picture');
+            $table->dropColumn('avatar');
         });
     }
 };
