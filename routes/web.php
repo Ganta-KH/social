@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -34,3 +35,6 @@ Route::delete('/social/delete/{id}', [PostController::class,'delete'])->name('so
 
 Route::post('/comment/{id}', [CommentController::class,'store'])->name('comment.store');
 Route::get('/comment', [CommentController::class,'show'])->name('comment.show');
+
+Route::get('/{username}', [UserController::class,'index'])->name('user.index');
+
