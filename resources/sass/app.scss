@@ -51,7 +51,8 @@
 
 .add-post:hover,
 .post-bt:hover,
-.cmnt-bt:hover {
+.cmnt-bt:hover,
+.edit-p:hover {
     background-color: #2B3499;
     transform: scale(1.1);
     transition: 100ms;
@@ -63,7 +64,8 @@
 
 .post-bt,
 .edit-bt,
-.cmnt-bt {
+.cmnt-bt,
+.edit-p {
     background-color: #1640D6;
     color: white;
     font-weight: 600;
@@ -210,5 +212,26 @@
       background-color: #d7dadb; 
       transform: scale(1.2); 
       transition: 100ms;
+    }
+}
+
+.p-info {
+    padding: 35px;
+    gap: 35px;
+    justify-content: center;
+    margin-bottom: 50px;
+    img {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        background-color: #d7dadb;
+    }
+
+    .username-edit,
+    .numbers {
+        padding-bottom: 7px;
+        display: flex;
+        gap: 22px;
+        align-items: flex-start;
     }
 }
